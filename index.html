@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animagent - Welcome to the Future!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            color: #00ff00;
+            font-family: "Comic Sans MS", cursive;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: linear-gradient(45deg, rgba(0, 0, 102, 0.9), rgba(0, 0, 51, 0.9));
+            border: 5px solid #ff00ff;
+            box-shadow: 0 0 20px #ff00ff;
+            padding: 20px;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-size: 72px;
+            color: #ff00ff;
+            text-shadow: 3px 3px #00ff00,
+                         6px 6px #0000ff;
+            margin-bottom: 20px;
+            animation: rainbow 3s infinite;
+            font-family: "Impact", "Comic Sans MS", cursive;
+            letter-spacing: 2px;
+        }
+
+        .welcome-text {
+            font-size: 24px;
+            color: #ffff00;
+            margin-bottom: 30px;
+            animation: blink 1s infinite;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .menu-item {
+            background: #ff00ff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: 3px solid #00ff00;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s;
+            text-shadow: 2px 2px #000000;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.1);
+            background: #00ff00;
+            color: #000000;
+        }
+
+        .counter {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: #00ff00;
+            font-size: 14px;
+        }
+
+        .construction {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            animation: rotate 2s infinite linear;
+        }
+
+        @keyframes rainbow {
+            0% { color: #ff0000; text-shadow: 3px 3px #00ff00, 6px 6px #0000ff; }
+            20% { color: #ff00ff; text-shadow: 3px 3px #00ff00, 6px 6px #0000ff; }
+            40% { color: #0000ff; text-shadow: 3px 3px #ff00ff, 6px 6px #00ff00; }
+            60% { color: #00ff00; text-shadow: 3px 3px #ff00ff, 6px 6px #ff0000; }
+            80% { color: #ffff00; text-shadow: 3px 3px #ff0000, 6px 6px #ff00ff; }
+            100% { color: #ff0000; text-shadow: 3px 3px #00ff00, 6px 6px #0000ff; }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .marquee {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            color: #ffff00;
+            font-size: 18px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #00ffff;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            font-style: italic;
+            text-shadow: 1px 1px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="container">
+        <img src="https://web.archive.org/web/20090830195459/http://geocities.com/Area51/Corridor/5177/construction.gif" 
+             alt="Under Construction" 
+             class="construction">
+        <h1>ANIMAGENT</h1>
+        <div class="tagline">Where Animation Meets Magic!</div>
+        <div class="welcome-text">*** BEST VIEWED IN NETSCAPE NAVIGATOR ***</div>
+        <div class="menu">
+            <div class="menu-item">Home</div>
+            <div class="menu-item">About</div>
+            <div class="menu-item">Links</div>
+            <div class="menu-item">Guestbook</div>
+        </div>
+        <div class="marquee">
+            <marquee>Welcome to Animagent - Your Ultimate Animation Destination! Don't forget to sign my guestbook! This site is optimized for 800x600 resolution!</marquee>
+        </div>
+        <div class="counter">Visitors: 000,001</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
